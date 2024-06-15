@@ -1,8 +1,9 @@
-This project was initally created in two days, following the logic outlined in Daniel B Cristofani's version. It may be updated in the future with optimisations, but may be left in its current state. 
+This project was initially created in two days, following the logic outlined in Daniel B. Cristofani's version. It may be updated in the future with optimisations but may be left in its current state. 
+Currently, the program is 228 bytes long without any additional comments. 
 
-The inital comment loop: 
+The initial comment loop: 
   This project was inspired by https://brainfuck.org/fib_explained.b
-  Most of the logic used here comes from Daniel B Cristofani's implementation, but I tried to create the code itself
+  Most of the logic used here comes from Daniel B. Cristofani's implementation, but I tried to create the code itself
   
   Cell Structure:
   Fixed Cell Pattern
