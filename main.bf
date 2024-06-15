@@ -1,6 +1,6 @@
 [
    This project was inspired by https://brainfuck.org/fib_explained.b
-   Most of the logic used here comes from Daniel B Cristofani's implementation, but I tried to create the code itself
+   Most of the logic used here comes from Daniel B. Cristofani's implementation, but I tried to create the code itself
    
    Cell Structure:
    Fixed Cell Pattern
