@@ -32,6 +32,7 @@
 ]
 
 setup
+++[>+++++<-]>
 >++++++++++ 1: 10 (\n)
 >+>+ 2&3: 1
 
@@ -61,7 +62,6 @@ setup
       <[>+<-] copy V1 to V2 exit at V1
       BC0
       >>[<+<+>>-] add V3 to V1 & V2 exit at V3
-      0BC & Carry
       B0C & Carry
       transfer V2 to V3
       < goto V2
