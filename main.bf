@@ -5,9 +5,8 @@
    Cell Structure:
    Fixed Cell Pattern
    0: 0
-   1: 1
-   2: \n character
-   3+: Variable
+   1: \n character
+   2+: Variable
    Variable Cell Pattern
    V1: "T" cell (length marker, sum, temp)
    V2: "A" (number A)
@@ -15,12 +14,12 @@
    
    Changing from 1AB -> 1BC:
    Start
-   1AB
-   0AB
+   A1B
    A0B
-   CB0
-   0BC & Carry if C>9
-   1BC
+   0AB
+   BC0
+   B0C & Carry if C>9
+   B1C
    End
    
    Carrying digits:
@@ -33,90 +32,77 @@
 ]
 
 setup
->+ 1: 1
->++++++++++ 2: 10 (\n)
->+>+ 3&4: 1
-<<< goto 1
+++[>+++++<-]>
+>++++++++++ 1: 10 (\n)
+>+>+ 2&3: 1
 
 [ main loop
-   output each digit of the new number from the end to the start
-   >> goto 3
-
-   goto the end of the list
-   [
-      >>>
-   ]
-
-   <<< goto final V1
+   entry point: V2 (cell 3)
    [ output loop
-      V1 currently 1
-      ++++ V1: 5
-      [>>++++++++++<<-]>>--. V3 add 48 (convert int to ASCII)
-      ++ V3 add 2 to avoid underflow
-      <<+++++ V1: 5
-      [>>----------<<-] V3 sub 50 (convert ASCII to int)
-      + V1: 1
-      <<< goto previous V1
+      V2 currently 1
+      +++++ V2: 6
+      [>++++++++<-]>. V3 add 48 (convert int to ASCII)
+      <++++++ V2: 5
+      [>--------<-] V3 sub 48 (convert ASCII to int)
+      + V2: 1
+      <<< goto previous V2
    ] end output loop
    exit at cell 0
-   >>.. print 2 (\n)
+   >.. print 1 (\n)
    
-   > goto first V1 (cell 3)
+   >> goto first V2 (cell 3)
    [ calculation loop
-      currently at V1
+      currently at V2
       check algorithm in entry comment
-      1AB
-      0AB
-      [-] reset V1
+      
+      A1B
       A0B
-      >[<+>-] copy V2 to V1 exit at V2
-      CB0
-      >[<+<+>>-] add V3 to V1 & V2 exit at V3
-      0BC & Carry
-      << goto V1
-         if V1 != 0
-         [>>+<<-
-         if V1 != 1
-         [>>+<<-
-         if V1 != 2
-         [>>+<<-
-         if V1 != 3
-         [>>+<<-
-         if V1 != 4
-         [>>+<<-
-         if V1 != 5
-         [>>+<<-
-         if V1 != 6
-         [>>+<<-
-         if V1 != 7
-         [>>+<<-
-         if V1 != 8
-         [>>+<<-
-         if V1 != 9
+      [-] reset V2
+      0AB
+      <[>+<-] copy V1 to V2 exit at V1
+      BC0
+      >>[<+<+>>-] add V3 to V1 & V2 exit at V3
+      B0C & Carry
+      transfer V2 to V3
+      < goto V2
+         if V2 != 0
+         [>+<-
+         if V2 != 1
+         [>+<-
+         if V2 != 2
+         [>+<-
+         if V2 != 3
+         [>+<-
+         if V2 != 4
+         [>+<-
+         if V2 != 5
+         [>+<-
+         if V2 != 6
+         [>+<-
+         if V2 != 7
+         [>+<-
+         if V2 != 8
+         [>+<-
+         if V2 != 9
          [ carry
          must be greater than 9 so carry a digit
          decrement by 1 (10 total)
          -
          empty V3
-         >>[-]
-         increment next V1
+         >[-]
+         increment next V1 (carry digit)
          >+
-         increment next V2 (carry digit)
+         increment next V2
          >+
-         <<<< return to current V1
-         [>>+<<-] move remainder of V1 to V3 exit at V1
+         <<< return to current V2
+         [>+<-] move remainder of V2 to V3 exit at V2
          ] end carry
-         ]]]]]]]]] exit at V1
-      1BC
-      + set V1 to 1
-      >>> goto next V1
+         ]]]]]]]]] exit at V2
+      B1C
+      + set V2 to 1
+      >>> goto next V2
    ] end calculation loop
-   exit 3 past final V1
+   exit 3 past final V2
 
-   <<< return to first V1
-   return to cell 0
-   [
-      <<<
-   ]
-   > goto 1
+   <<< goto last V2
 ] end main loop

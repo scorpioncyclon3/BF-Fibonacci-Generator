@@ -1,7 +1,7 @@
 # BrainF Fibbonacci Generator
 ### Summary<br>
 This project was initially created in two days, following the logic outlined in Daniel B. Cristofani's version. It may be updated in the future with optimisations but may be left in its current state.<br>
-Currently, the program is 228 bytes long if all additional comments are removed.<br>
+Currently, the program's contents are 173 bytes long if all additional comments and information is removed.<br>
 <br>
 ### The initial comment loop:<br>
 This project was inspired by https://brainfuck.org/fib_explained.b<br>
@@ -10,9 +10,8 @@ Most of the logic used here comes from Daniel B. Cristofani's implementation, bu
 Cell Structure:<br>
 Fixed Cell Pattern<br>
 0: 0<br>
-1: 1<br>
-2: \n character<br>
-3+: Variable<br>
+1: \n character<br>
+2+: Variable<br>
 Variable Cell Pattern<br>
 V1: "T" cell (length marker, sum, temp)<br>
 V2: "A" (number A)<br>
@@ -20,12 +19,12 @@ V3: "B" (number B)<br>
 <br>
 Changing from 1AB -> 1BC:<br>
 Start<br>
-1AB<br>
-0AB<br>
+A1B<br>
 A0B<br>
-CB0<br>
-0BC & Carry if C>9<br>
-1BC<br>
+0AB<br>
+BC0<br>
+B0C & Carry if C>9<br>
+B1C<br>
 End<br>
 <br>
 Carrying digits:<br>
