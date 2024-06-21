@@ -39,11 +39,10 @@ setup
    entry point: V2 (cell 3)
    [ output loop
       V2 currently 1
-      ++++ V2: 5
-      [>++++++++++<-]>--. V3 add 48 (convert int to ASCII)
-      ++ V3 add 2 to avoid underflow
-      <+++++ V2: 5
-      [>----------<-] V3 sub 50 (convert ASCII to int)
+      +++++ V2: 6
+      [>++++++++<-]>. V3 add 48 (convert int to ASCII)
+      <++++++ V2: 5
+      [>--------<-] V3 sub 48 (convert ASCII to int)
       + V2: 1
       <<< goto previous V2
    ] end output loop
