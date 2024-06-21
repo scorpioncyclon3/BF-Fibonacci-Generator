@@ -37,13 +37,6 @@ setup
 
 [ main loop
    entry point: V2 (cell 3)
-   
-   output each digit of the new number from the end to the start
-   goto the end of the list
-   [
-      >>>
-   ]
-   <<< goto final V2
    [ output loop
       V2 currently 1
       ++++ V2: 5
@@ -113,9 +106,4 @@ setup
    exit 3 past final V2
 
    <<< goto last V2
-   return to cell 0
-   [
-      <<<
-   ]
-   >>> goto first V2 (3)
 ] end main loop
