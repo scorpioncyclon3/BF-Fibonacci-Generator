@@ -1,7 +1,8 @@
 # BrainF Fibbonacci Generator
 ### Summary<br>
-This project was initially created in two days, following the logic outlined in Daniel B. Cristofani's version. It may be updated in the future with optimisations but may be left in its current state.<br>
-Currently, the program's contents are 173 bytes long if all additional comments and information is removed.<br>
+This project was initially created in two days, following the logic outlined in Daniel B. Cristofani's version.<br>
+The program's contents are 173 bytes long if all additional comments and information are removed.<br>
+It is currently identical to Daniel B. Cristofani's version (If the double \n print is converted to a single \n), and I believe this is the most optimised state it can achieve.<br>
 <br>
 ### The initial comment loop:<br>
 This project was inspired by https://brainfuck.org/fib_explained.b<br>
