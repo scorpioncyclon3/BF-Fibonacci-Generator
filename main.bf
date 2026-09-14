@@ -8,11 +8,11 @@
    1: \n character
    2+: Variable
    Variable Cell Pattern
-   V1: "T" cell (length marker, sum, temp)
-   V2: "A" (number A)
+   V1: "A" (number A)
+   V2: "T" cell (length marker, sum, temp)
    V3: "B" (number B)
    
-   Changing from 1AB -> 1BC:
+   Changing from A1B -> B1C:
    Start
    A1B
    A0B
